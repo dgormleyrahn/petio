@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const MovieSchema = mongoose.Schema({
   title: String,
-  ratingKey: Number,
+  ratingKey: { type: Number, unique: true, index: true },
   key: String,
   guid: String,
   studio: String,
@@ -11,7 +11,7 @@ const MovieSchema = mongoose.Schema({
   contentRating: String,
   summary: String,
   rating: Number,
-  year: Number,
+  year: { type: Number, index: true },
   tagline: String,
   thumb: String,
   art: String,
@@ -29,9 +29,9 @@ const MovieSchema = mongoose.Schema({
   Role: Array,
   idSource: String,
   externalId: String,
-  imdb_id: String,
-  tmdb_id: String,
-  petioTimestamp: Date,
+  imdb_id: { type: String, index: true },
+  tmdb_id: { type: String, index: true },
+  petioTimestamp: { type: Date, index: true },
 });
 
 module.exports = mongoose.model("Movie", MovieSchema);

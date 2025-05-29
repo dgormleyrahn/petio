@@ -45,7 +45,10 @@ class Carousel extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.init);
-    window.removeEventListener("resize", this.isInViewport);
+    let page = document.querySelectorAll(".page-wrap")[0];
+    if (page) {
+      page.removeEventListener("scroll", this.isInViewport);
+    }
   }
 
   init() {

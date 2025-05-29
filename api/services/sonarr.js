@@ -280,7 +280,7 @@ class Sonarr {
           requestId: request.id,
         });
         let exists = false;
-        for (let o; o < dbRequest.sonarrId.lenght; o++) {
+        for (let o = 0; o < dbRequest.sonarrId.length; o++) {
           if (dbRequest.sonarrId[o][this.config.uuid]) {
             exists = true;
             dbRequest.sonarrId[o][this.config.uuid] = sonarrId;

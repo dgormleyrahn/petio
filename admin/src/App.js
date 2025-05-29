@@ -122,7 +122,7 @@ class App extends React.Component {
       pushMsg: msgs,
     });
 
-    setInterval(() => {
+    setTimeout(() => {
       let msgs = { ...this.state.pushMsg };
       delete msgs[timestamp];
       this.setState({

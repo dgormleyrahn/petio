@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const FriendSchema = mongoose.Schema(
   {
-    id: String,
+    id: { type: String, unique: true, index: true },
     title: String,
     username: String,
-    nameLower: String,
-    email: String,
+    nameLower: { type: String, index: true },
+    email: { type: String, unique: true, index: true },
     password: String,
     recommendationsPlaylistId: String,
     thumb: String,
@@ -14,7 +14,7 @@ const FriendSchema = mongoose.Schema(
     altId: String,
     lastIp: String,
     role: String,
-    profile: String,
+    profile: { type: String, index: true },
     custom: Boolean,
     disabled: Boolean,
     quotaCount: Number,

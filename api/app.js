@@ -316,7 +316,7 @@ class Main {
 
       let configData = {
         DB_URL: db + "/petio",
-        tmdbApi: "1af5ad19a2d972a67cd27eb033979c4c",
+        tmdbApi: process.env.TMDB_API_KEY || "1af5ad19a2d972a67cd27eb033979c4c",
         plexProtocol: server.protocol,
         plexIp: server.host,
         plexPort: server.port,
